@@ -10,13 +10,17 @@ let bTab = createBottomTabNavigator();
 export default MainBottomTab = () => {
     return (
 
-        <bTab.Navigator initialRouteName='Home' screenOptions={{ headerShown: false ,tabBarStyle:{backgroundColor:'#03A9F4'}}}>
+        <bTab.Navigator initialRouteName='Home' screenOptions={{
+             headerShown: false ,
+             tabBarStyle:{backgroundColor:'#03A9F4',height:56},
+            //  tabBarActiveTintColor:''
+             }}>
             <bTab.Screen name='Home' component={Home} options={{
                 tabBarIcon: ({ focused }) => (
                     <Image
                         source={require('../images/Home.png')}
                         style={{
-                            tintColor: focused ? 'red' : 'black', 
+                            tintColor: focused ? 'white' : '#FFFFFF80', 
                             width: 24,
                             height: 24,
                         }}
