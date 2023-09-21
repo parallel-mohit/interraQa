@@ -1,35 +1,17 @@
-import { View, Text, StyleSheet, Image, SafeAreaView, TouchableOpacity, FlatList } from 'react-native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { View, Text, StyleSheet, Image, SafeAreaView, TouchableOpacity, FlatList, Button } from 'react-native'
+import ProjectContainer from './ProjectContainer'
 
-export default Projects = () => {
+export default Projects = (props) => {
+   console.log(props)
     let users = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]
-    let handleProjectlst = () =>{
-        
+    let handleProjectlst = () => {
+        props.navigation.navigate('ProjectContainer')
     }
     return (
         <SafeAreaView >
             <View style={styles.container}>
-                <View style={styles.header}>
-                    <View style={{
-                        paddingLeft: 10,
-                        marginTop: 16,
-                    }}>
-                        <Image source={require('../images/QA-Logo.png')} style={{
-                            width: 52.73,
-                            height: 30,
-                        }} />
-                    </View>
-                    <TouchableOpacity style={{
-                        marginRight: 10,
-                        marginTop: 16,
-
-                    }}>
-                        <Image source={require('../images/Search.png')} style={{
-                            width: 24,
-                            height: 24,
-                        }} />
-                    </TouchableOpacity>
-
-                </View>
+                
                 <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
                     <View style={{ flexDirection: 'row' }}>
                         <TouchableOpacity>
@@ -46,7 +28,7 @@ export default Projects = () => {
                     </View>
                     <FlatList data={users}
 
-                        renderItem={({ item }) => <TouchableOpacity style={styles.list} onPress={handleProjectlst}>
+                        renderItem={({ item }) => <TouchableOpacity style={styles.list} onPress={()=>handleProjectlst()}>
                             <View style={{ marginHorizontal: 10, paddingVertical: 20 }}>
                                 <Text style={{
                                     fontSize: 16,
@@ -77,7 +59,7 @@ export default Projects = () => {
                                 <Text style={{ color: '#212121', fontSize: 14 }}>Thu, 4 Aug 2022</Text>
                             </View>
                             <View>
-                            
+
                             </View>
 
                         </TouchableOpacity>} />
@@ -87,6 +69,18 @@ export default Projects = () => {
 
     )
 }
+// let Stack = createNativeStackNavigator();
+
+//  => {   
+//     return (
+//         <Stack.Navigator screenOptions={{headerShown:false}}>
+//             <Stack.Screen name='Project' component={Project}  />
+//             <Stack.Screen name='ProjectContainer' component={ProjectContainer} />
+//         </Stack.Navigator>
+//     )
+// }
+
+
 
 let styles = StyleSheet.create({
     container: {

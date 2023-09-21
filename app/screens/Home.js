@@ -8,29 +8,7 @@ export default Home = (props) => {
     return (
         // <SafeAreaView >
         <ScrollView style={styles.container}>
-            <View style={styles.header}>
-                <View style={{
-                    paddingLeft: 10,
-                    marginTop: 16,
-                }}>
-                    <Image source={require('../images/QA-Logo.png')} style={{
-                        width: 52.73,
-                        height: 30,
-                    }} />
-                </View>
-                <TouchableOpacity style={{
-                    marginRight: 10,
-                    marginTop: 16,
-
-                }}>
-                    <Image source={require('../images/Search.png')} style={{
-                        width: 24,
-                        height: 24,
-                    }} />
-                </TouchableOpacity>
-
-            </View>
-
+            
             <View style={styles.mainContainer}>
                 <View style={styles.lstContainer}>
                     <View style={{ paddingVertical: 20 }}>

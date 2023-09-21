@@ -30,7 +30,7 @@ export default LogIn = (props) => {
 
                     }}>
 
-                        <Image source={require('../images/1.png')}
+                        <Image source={require('../images/microsoft.png')}
                             style={{ marginLeft: 30, marginTop: 9, width: 22, height: 22 }} />
                         <Text style={styles.SignInText}>Sign in with Microsoft</Text>
 
