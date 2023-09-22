@@ -1,15 +1,15 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { View, Text, StyleSheet, Image, SafeAreaView, TouchableOpacity, FlatList, Button } from 'react-native'
+import { View, Text, StyleSheet, Image, SafeAreaView, TouchableOpacity, FlatList, Button, ScrollView } from 'react-native'
 import ProjectContainer from './ProjectContainer'
 
-export default Projects = (props) => {
-   console.log(props)
+let Project = (props) => {
+   
     let users = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]
     let handleProjectlst = () => {
         props.navigation.navigate('ProjectContainer')
     }
     return (
-        <SafeAreaView >
+        <ScrollView >
             <View style={styles.container}>
                 
                 <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
@@ -27,7 +27,7 @@ export default Projects = (props) => {
                         </TouchableOpacity>
                     </View>
                     <FlatList data={users}
-
+                        scrollEnabled={false}
                         renderItem={({ item }) => <TouchableOpacity style={styles.list} onPress={()=>handleProjectlst()}>
                             <View style={{ marginHorizontal: 10, paddingVertical: 20 }}>
                                 <Text style={{
@@ -65,20 +65,20 @@ export default Projects = (props) => {
                         </TouchableOpacity>} />
                 </View>
             </View>
-        </SafeAreaView>
+        </ScrollView>
 
     )
 }
-// let Stack = createNativeStackNavigator();
+let Stack = createNativeStackNavigator();
 
-//  => {   
-//     return (
-//         <Stack.Navigator screenOptions={{headerShown:false}}>
-//             <Stack.Screen name='Project' component={Project}  />
-//             <Stack.Screen name='ProjectContainer' component={ProjectContainer} />
-//         </Stack.Navigator>
-//     )
-// }
+export default Projects=() => {   
+    return (
+        <Stack.Navigator screenOptions={{headerShown:false,headerBackVisible:true}}>
+            <Stack.Screen name='Project' component={Project}  />
+            <Stack.Screen name='ProjectContainer' component={ProjectContainer} />
+        </Stack.Navigator>
+    )
+}
 
 
 

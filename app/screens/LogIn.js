@@ -10,9 +10,9 @@ export default LogIn = (props) => {
 
             <View style={styles.container}>
                 <Image source={require('../images/Logo.png')}
-                    style={{ width: 180, height: 68 }} />
+                    style={{ width: 180, height: 68,marginTop:25 }} />
                 <View style={{
-                    marginTop: 231,
+                    marginTop:'54%',
                     alignItems: 'center'
                 }}>
                     <Image source={require('../images/QA-Logo.png')}

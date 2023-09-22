@@ -25,8 +25,22 @@ export default Main = () => {
                 )
             }}>
                 <Stack.Screen name='LogIn' component={LogIn} options={{ headerShown: false }} />
-                <Stack.Screen name='MAinBottomTab' component={MainBottomTab} />
-                <Stack.Screen name='projectContainer' component={ProjectContainer}/>
+                <Stack.Screen name='MAinBottomTab' component={MainBottomTab} options={{
+                    headerTitle: '',headerLeft: () => (
+                        <Image source={require('../images/QA-Logo.png')} style={{
+                            width: 52.73,
+                            height: 30,
+                        }} />),
+                    headerRight: () => (
+                        <TouchableOpacity>
+                            <Image source={require('../images/Search.png')} style={{
+                                width: 24,
+                                height: 24,
+                            }} /></TouchableOpacity>
+                    )
+                }}/>
+                {/* <Stack.Screen name='ProjectContainer'  component={ProjectContainer}/> */}
+                
             </Stack.Navigator>
         </NavigationContainer>
     )
@@ -37,5 +51,10 @@ let styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
+    },styBottomNAvigation:{
+        headerShadowVisible:false,
+        headerLeft: () => (
+            <Text style={{color:'#03A9F4',fontSize:18,marginLeft:20}}>Project Title</Text>
+        ),
+    }
 })
