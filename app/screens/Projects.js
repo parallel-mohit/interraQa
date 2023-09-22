@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { View, Text, StyleSheet, Image, SafeAreaView, TouchableOpacity, FlatList, Button, ScrollView } from 'react-native'
 import ProjectContainer from './ProjectContainer'
 
-let Project = (props) => {
+export default Projects = (props) => {
    
     let users = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]
     let handleProjectlst = () => {
@@ -71,14 +71,14 @@ let Project = (props) => {
 }
 let Stack = createNativeStackNavigator();
 
-export default Projects=() => {   
-    return (
-        <Stack.Navigator screenOptions={{headerShown:false,headerBackVisible:true}}>
-            <Stack.Screen name='Project' component={Project}  />
-            <Stack.Screen name='ProjectContainer' component={ProjectContainer} />
-        </Stack.Navigator>
-    )
-}
+// =() => {   
+//     return (
+//         <Stack.Navigator screenOptions={{headerShown:false,headerBackVisible:true}}>
+//             <Stack.Screen name='Project' component={Project}  />
+//             <Stack.Screen name='ProjectContainer' component={ProjectContainer} />
+//         </Stack.Navigator>
+//     )
+// }
 
 
 

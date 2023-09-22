@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ViewTestCycleDetails from './ViewTestCycleDetails'
 import TestCaseId from './TestCaseId'
 
-let TextCycles = (props) => {
+export default TestCycle = (props) => {
     let users = [{ id: 'TCY001', Status: 'completed', totalExecuted: { pass: 12, fail: 10 }, result: 'fail' }, { id: 'TCY002', Status: 'in-Progress' }]
     let [isStatus, setIsStatus] = useState('completed')
     let handleTestCycleList = (item) => {
@@ -96,16 +96,13 @@ let TextCycles = (props) => {
 }
 let Stack = createNativeStackNavigator();
 
-export default TestCycle = () => {
-    return (
-        <Stack.Navigator screenOptions={{}}>
-            <Stack.Screen name='Test Cycles' component={TextCycles} />
-            <Stack.Screen name='View Test Cycles Details' component={ViewTestCycleDetails} />
-
-            <Stack.Screen name='Test Case Id' component={TestCaseId}/>
-        </Stack.Navigator>
-    )
-}
+// export default TestCycle = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{}}>
+           
+//         </Stack.Navigator>
+//     )
+// }
 
 let styles = StyleSheet.create({
     container: {},

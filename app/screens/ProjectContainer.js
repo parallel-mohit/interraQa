@@ -9,7 +9,7 @@ export default ProjectContainer  = () => {
 return (
     <Tab.Navigator screenOptions={{}}>
             <Tab.Screen name='Overview' component={Overview}/>
-            <Tab.Screen name='Test Cycle' component={TestCycle}/>
+            <Tab.Screen name='TestCycle' component={TestCycle}/>
             <Tab.Screen name='Bugs' component={Bug}/>
     </Tab.Navigator>
         
