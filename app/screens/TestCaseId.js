@@ -1,13 +1,12 @@
-import { View, Text, StyleSheet, TextInput, ScrollView, TouchableOpacity } from 'react-native'
-import { AntDesign } from '@expo/vector-icons'
-import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native'
+
+import Attachments from '../components/Attachments';
+import Textinputoutlined from '../components/Textinputoutlined';
 
 
 export default TestCaseId = () => {
-    let handleImagePicker = async () => {
-        let result = await launchImageLibrary({ mediaType: 'photo', quality: 0 });
-        // console.log(result.assets)
-    }
+  
+
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.container} >
@@ -61,22 +60,13 @@ export default TestCaseId = () => {
                         <Text style={{ color: 'white', fontSize: 12 }}>FAIL</Text>
                     </View>
                 </View>
-                <Text style={{ fontSize: 12, color: "#616161", marginTop: 10 }}>ACTUAL RESULT</Text>
-                <TextInput style={styles.input} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo
+                <Text style={{ fontSize: 12, color: "#616161", marginTop: 10,marginBottom:20 }}>ACTUAL RESULT</Text>
+                <Textinputoutlined label={"ACTUAL RESULT"} />
+                {/* <TextInput style={styles.input} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo
                     d tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
                     elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</TextInput>
-                <View style={{ borderWidth: 0.4, borderColor: '#BDBDBD', marginBottom: 20, marginTop: 20 }}></View>
-                <Text style={{ fontSize: 14, color: '#616161', fontWeight: '600' }}>ATTACHMENTS</Text>
-                <TouchableOpacity onPress={handleImagePicker}>
-                    <View style={{
-                        flexDirection: 'row', alignItems: 'center',
-                        backgroundColor: '#03A9F4', height: 40, width: 170, borderRadius: 5, marginTop: 10
-                    }} >
-                        <AntDesign name='camera' size={20} color={'white'} style={{ marginLeft: 20 }} />
-                        <Text style={{ color: 'white', fontSize: 16, fontWeight: '700', marginLeft: 10 }}>ATTACH FILE</Text>
-                    </View>
-
-                </TouchableOpacity>
+                 */} 
+               <Attachments/>
             </View>
         </ScrollView>
     )

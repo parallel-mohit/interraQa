@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet ,ScrollView,Image,TouchableOpacity,FlatList} from 'react-native'
 
-export default Bug = () => {
+export default Bug = (props) => {
     let users = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]
     let handleProjectlst = () => {
-        props.navigation.navigate('ProjectContainer')
+       props.navigation.navigate('View Bug Details')
     }
     return (
         <ScrollView >

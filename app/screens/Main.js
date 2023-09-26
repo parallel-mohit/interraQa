@@ -6,6 +6,8 @@ import MainBottomTab from './MainBottomTab';
 import ProjectContainer from './ProjectContainer';
 import Projects from './Projects';
 import TestCycle from './TestCycle';
+import ViewBugDetail from './ViewBugDetail';
+import EditBugsDetail from './EditBugsDetail';
 
 let Stack = createNativeStackNavigator();
 export default Main = () => {
@@ -46,7 +48,7 @@ export default Main = () => {
                 }} />
                 <Stack.Screen name='Projects' component={Projects} />
                 <Stack.Screen name='ProjectContainer' component={ProjectContainer} options={{
-                    
+
                     headerShadowVisible: false,
                     headerBackImageSource: () => (<Icon width={12} height={10} />),
 
@@ -54,7 +56,7 @@ export default Main = () => {
                     headerLeft: () => (
                         <Text style={{ color: '#03A9F4', fontSize: 18, }}>Project Title</Text>
                     ),
-                    
+
                 }} />
                 {/* <Stack.Screen name='TestCycle' component={TestCycle} /> */}
                 <Stack.Screen name='View Test Cycles Details' component={ViewTestCycleDetails} options={{
@@ -66,7 +68,7 @@ export default Main = () => {
                     headerLeft: () => (
                         <Text style={{ color: '#03A9F4', fontSize: 18, }}>Project Title</Text>
                     ),
-                    headerRight:()=><View></View>
+                    headerRight: () => <View></View>
 
                 }} />
 
@@ -79,9 +81,37 @@ export default Main = () => {
                     headerLeft: () => (
                         <Text style={{ color: '#03A9F4', fontSize: 18, }}>Project Title</Text>
                     ),
-                   headerRight:()=><View></View>
+                    headerRight: () => <View></View>
 
                 }} />
+
+                <Stack.Screen name='View Bug Details' component={ViewBugDetail} options={{
+
+                    headerShadowVisible: false,
+                    headerBackImageSource: () => (<Icon width={12} height={10} />),
+
+                    headerStyle: {},
+                    headerLeft: () => (
+                        <Text style={{ color: '#03A9F4', fontSize: 18, }}>View Bug Details</Text>
+                    ),
+                    headerRight: () => <View></View>
+
+                }} />
+
+                <Stack.Screen name='Edit Bugs Details' component={EditBugsDetail} options={{
+
+                    headerShadowVisible: false,
+                    headerBackImageSource: () => (<Icon width={12} height={10} />),
+
+                    headerStyle: {},
+                    headerLeft: () => (
+                        <Text style={{ color: '#03A9F4', fontSize: 18, }}>Edit Bugs Details</Text>
+                    ),
+                    headerRight: () => <View></View>
+
+                }} />
+
+
 
             </Stack.Navigator>
         </NavigationContainer>
