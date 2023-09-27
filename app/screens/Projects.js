@@ -1,6 +1,6 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
 import { View, Text, StyleSheet, Image, SafeAreaView, TouchableOpacity, FlatList, Button, ScrollView } from 'react-native'
-import ProjectContainer from './ProjectContainer'
+
 
 export default Projects = (props) => {
    
@@ -9,6 +9,7 @@ export default Projects = (props) => {
         props.navigation.navigate('ProjectContainer')
     }
     return (
+        <>
         <ScrollView >
             <View style={styles.container}>
                 
@@ -65,21 +66,13 @@ export default Projects = (props) => {
                         </TouchableOpacity>} />
                 </View>
             </View>
+           
         </ScrollView>
+         <RoundIconbtn name={'plus'} color={'#FFFFFF'} size={16} style={styles.addbtn} />
+        </>
 
     )
 }
-let Stack = createNativeStackNavigator();
-
-// =() => {   
-//     return (
-//         <Stack.Navigator screenOptions={{headerShown:false,headerBackVisible:true}}>
-//             <Stack.Screen name='Project' component={Project}  />
-//             <Stack.Screen name='ProjectContainer' component={ProjectContainer} />
-//         </Stack.Navigator>
-//     )
-// }
-
 
 
 let styles = StyleSheet.create({
@@ -109,5 +102,14 @@ let styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 5,
         borderColor: '#E0E0E0'
+    },
+    addbtn: {
+        position: 'absolute',
+        bottom: 40,
+        right: 25,
+        width: 56,
+        height: 56,
+        textAlign: 'center',
+        verticalAlign: 'middle'
     }
 })

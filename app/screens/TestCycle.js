@@ -14,6 +14,7 @@ export default TestCycle = (props) => {
         }
     }
     return (
+        <>
         <View style={styles.container}>
             <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -91,7 +92,10 @@ export default TestCycle = (props) => {
                         </View>
                     } />
             </View>
+            
         </View>
+        <RoundIconbtn name={'plus'} color={'#FFFFFF'} size={16} style={styles.addbtn} />
+        </>
     )
 }
 let Stack = createNativeStackNavigator();
@@ -128,5 +132,14 @@ let styles = StyleSheet.create({
 
         justifyContent: 'center',
         alignItems: 'center', marginBottom: 20
+    },
+    addbtn: {
+        position: 'absolute',
+        bottom: 56,
+        right: 30,
+        width: 56,
+        height: 56,
+        textAlign: 'center',
+        verticalAlign: 'middle'
     }
 })

@@ -91,7 +91,7 @@ export default Home = (props) => {
                 </View>
 
             </ScrollView>
-            <RoundIconbtn name={'plus'} color={'#FFFFFF'} size={16} style={styles.addbtn} />
+           
         </>
     )
 }
@@ -151,13 +151,5 @@ let styles = StyleSheet.create({
         borderColor: '#E0E0E0',
 
     },
-    addbtn: {
-        position: 'absolute',
-        bottom: 40,
-        right: 25,
-        width: 56,
-        height: 56,
-        textAlign: 'center',
-        verticalAlign: 'middle'
-    }
+   
 })
