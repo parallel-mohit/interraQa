@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import { TextInput } from 'react-native-paper';
 import SelectDropdown from 'react-native-select-dropdown'
 import { AntDesign } from '@expo/vector-icons'
-export default Textdropdown = ({label,da,style}) => {
+export default Textdropdown = ({label,da,style,value}) => {
     // console.log()
     return (
         <View style={styles.container}>
@@ -13,7 +13,7 @@ export default Textdropdown = ({label,da,style}) => {
                 activeOutlineColor='#BDBDBD'
                 outlineColor={'#BDBDBD'}
                 label={label}
-                value=' '
+                value=' '  
 
                 onChangeText={text => setText(text)}
                 render={props =>

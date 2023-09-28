@@ -15,7 +15,7 @@ export default Bugs = (props) => {
                 <View style={styles.container}>
 
                     <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
-                        <Filter />
+                        <Filter data={1} />
 
                         <View style={{
                             width: '100%',
