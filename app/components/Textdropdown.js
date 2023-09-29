@@ -7,12 +7,13 @@ export default Textdropdown = ({label,da,style,value}) => {
     return (
         <View style={styles.container}>
             <TextInput
-                style={{  backgroundColor: '#FFFFFF' , ...style }}
+                style={{  ...style,height:62,backgroundColor:'white',paddingLeft:10}}
                 outlineStyle={{ borderWidth: 2 }}
                 mode='outlined'
                 activeOutlineColor='#BDBDBD'
                 outlineColor={'#BDBDBD'}
                 label={label}
+                
                 value=' '  
 
                 onChangeText={text => setText(text)}
@@ -35,7 +36,7 @@ export default Textdropdown = ({label,da,style,value}) => {
                         rowTextForSelection={(item, index) => {
                             return item
                         }}
-                        buttonStyle={[styles.dropdown1BtnStyle, ] }
+                        buttonStyle={[styles.dropdown1BtnStyle,{borderColor:'#BDBDBD'}] }
                     />} />
 
 
@@ -46,12 +47,7 @@ export default Textdropdown = ({label,da,style,value}) => {
 let styles = StyleSheet.create({
     container: {marginBottom:20},
     dropdown1BtnStyle: {
-        width: '100%',
-        backgroundColor:'white',
-
-
-    },txt:{
-      
-        width:'100%'
+        width: '99%',
+        backgroundColor:'white'
     }
 })

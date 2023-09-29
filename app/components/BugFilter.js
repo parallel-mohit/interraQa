@@ -17,6 +17,12 @@ export default FilterModal = ({ visible, hideModal }) => {
     let [flag7, setFlag7] = useState(false)
     let [flag8, setFlag8] = useState(false)
     let [flag9, setFlag9] = useState(false)
+    let [flag10, setFlag10] = useState(false)
+    let [flag11, setFlag11] = useState(false)
+    let [flag12, setFlag12] = useState(false)
+    let [flag13, setFlag13] = useState(false)
+    let [flag14, setFlag14] = useState(false)
+    let [flag15, setFlag15] = useState(false)
 
     return (
         <ScrollView>
@@ -53,20 +59,20 @@ export default FilterModal = ({ visible, hideModal }) => {
 
                             </View>
                             <View style={{ flexDirection: 'row', marginTop: 20, }}>
-                                <TouchableOpacity style={[styles.roundedBtn, flag5 ? { borderColor: '#03A9F4' } : null, { paddingLeft: 0, paddingRight: 0 }]} onPress={() => setFlag5(!flag5)}>
+                                <TouchableOpacity style={[styles.roundedBtn, flag2 ? { borderColor: '#03A9F4' } : null, { paddingLeft: 0, paddingRight: 0 }]} onPress={() => setFlag2(!flag2)}>
                                     <View style={{ flexDirection: 'row', marginRight: 30 }}>
                                         <Image source={require('../images/list.png')}
-                                            style={{ height: 18, width: 18, marginLeft: 30, marginRight: 18, tintColor: flag5 ? '#03A9F4' : '#BDBDBD' }} />
-                                        <Text style={[styles.btn, flag5 ? { color: '#03A9F4' } : null]}>
+                                            style={{ height: 18, width: 18, marginLeft: 30, marginRight: 18, tintColor: flag2 ? '#03A9F4' : '#BDBDBD' }} />
+                                        <Text style={[styles.btn, flag2 ? { color: '#03A9F4' } : null]}>
                                             Ascending
                                         </Text>
                                     </View>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={[styles.roundedBtn, flag6 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10, paddingLeft: 0, paddingRight: 0 }]} onPress={() => setFlag6(!flag6)}>
+                                <TouchableOpacity style={[styles.roundedBtn, flag3 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10, paddingLeft: 0, paddingRight: 0 }]} onPress={() => setFlag3(!flag3)}>
                                     <View style={{ flexDirection: 'row', marginRight: 30 }}>
                                         <Image source={require('../images/download.png')}
-                                            style={{ height: 18, width: 18, marginLeft: 30, marginRight: 18, tintColor: flag6 ? '#03A9F4' : '#BDBDBD' }} />
-                                        <Text style={[styles.btn, flag6 ? { color: '#03A9F4' } : null]}>
+                                            style={{ height: 18, width: 18, marginLeft: 30, marginRight: 18, tintColor: flag3 ? '#03A9F4' : '#BDBDBD' }} />
+                                        <Text style={[styles.btn, flag3 ? { color: '#03A9F4' } : null]}>
                                             Descending
                                         </Text>
                                     </View>
@@ -84,47 +90,47 @@ export default FilterModal = ({ visible, hideModal }) => {
                             </View>
                             <View>
                                 <View style={{ flexDirection: 'row', marginTop: 10, }}>
-                                    <FilterRoundbtn style={[styles.roundedBtn, flag7 ? { borderColor: '#03A9F4' } : null]}
+                                    <FilterRoundbtn style={[styles.roundedBtn, flag4 ? { borderColor: '#03A9F4' } : null]}
                                         name={'Fixed'}
+                                        style1={[styles.btn, flag4 ? { color: '#03A9F4' } : null]}
+                                        onPress={() => setFlag4(!flag4)} />
+                                    <FilterRoundbtn style={[styles.roundedBtn, flag5 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
+                                        name={'Verified'}
+                                        style1={[styles.btn, flag5 ? { color: '#03A9F4' } : null]}
+                                        onPress={() => setFlag5(!flag5)} />
+                                    <FilterRoundbtn style={[styles.roundedBtn, flag6 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
+                                        name={'Closed'}
+                                        style1={[styles.btn, flag6 ? { color: '#03A9F4' } : null]}
+                                        onPress={() => setFlag6(!flag6)} />
+                                    <FilterRoundbtn style={[styles.roundedBtn, flag7 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
+                                        name={'Open'}
                                         style1={[styles.btn, flag7 ? { color: '#03A9F4' } : null]}
                                         onPress={() => setFlag7(!flag7)} />
-                                    <FilterRoundbtn style={[styles.roundedBtn, flag8 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
-                                        name={'Verified'}
-                                        style1={[styles.btn, flag8 ? { color: '#03A9F4' } : null]}
-                                        onPress={() => setFlag8(!flag8)} />
-                                    <FilterRoundbtn style={[styles.roundedBtn, flag9 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
-                                        name={'Closed'}
-                                        style1={[styles.btn, flag9 ? { color: '#03A9F4' } : null]}
-                                        onPress={() => setFlag9(!flag9)} />
-                                    <FilterRoundbtn style={[styles.roundedBtn, flag9 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
-                                        name={'Open'}
-                                        style1={[styles.btn, flag9 ? { color: '#03A9F4' } : null]}
-                                        onPress={() => setFlag9(!flag9)} />
                                 </View>
                                 <View style={{ flexDirection: 'row', marginTop: 10, }}>
-                                    <FilterRoundbtn style={[styles.roundedBtn, flag9 ? { borderColor: '#03A9F4' } : null,]}
+                                    <FilterRoundbtn style={[styles.roundedBtn, flag8 ? { borderColor: '#03A9F4' } : null,]}
                                         name={'in-Progress'}
-                                        style1={[styles.btn, flag9 ? { color: '#03A9F4' } : null]}
-                                        onPress={() => setFlag9(!flag9)} />
+                                        style1={[styles.btn, flag8 ? { color: '#03A9F4' } : null]}
+                                        onPress={() => setFlag8(!flag8)} />
 
                                     <FilterRoundbtn style={[styles.roundedBtn, flag9 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
                                         name={'Reopen'}
                                         style1={[styles.btn, flag9 ? { color: '#03A9F4' } : null]}
                                         onPress={() => setFlag9(!flag9)} />
-                                    <FilterRoundbtn style={[styles.roundedBtn, flag9 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
+                                    <FilterRoundbtn style={[styles.roundedBtn, flag10 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
                                         name={'Rejected'}
-                                        style1={[styles.btn, flag9 ? { color: '#03A9F4' } : null]}
-                                        onPress={() => setFlag9(!flag9)} />
+                                        style1={[styles.btn, flag10 ? { color: '#03A9F4' } : null]}
+                                        onPress={() => setFlag10(!flag9)} />
                                 </View>
                                 <View style={{ flexDirection: 'row', marginTop: 10 }}>
-                                    <FilterRoundbtn style={[styles.roundedBtn, flag9 ? { borderColor: '#03A9F4' } : null,]}
+                                    <FilterRoundbtn style={[styles.roundedBtn, flag11 ? { borderColor: '#03A9F4' } : null,]}
                                         name={'Duplicate'}
-                                        style1={[styles.btn, flag9 ? { color: '#03A9F4' } : null]}
-                                        onPress={() => setFlag9(!flag9)} />
-                                    <FilterRoundbtn style={[styles.roundedBtn, flag9 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
+                                        style1={[styles.btn, flag11 ? { color: '#03A9F4' } : null]}
+                                        onPress={() => setFlag11(!flag11)} />
+                                    <FilterRoundbtn style={[styles.roundedBtn, flag12 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]}
                                         name={'Deffered'}
-                                        style1={[styles.btn, flag9 ? { color: '#03A9F4' } : null]}
-                                        onPress={() => setFlag9(!flag9)} />
+                                        style1={[styles.btn, flag12 ? { color: '#03A9F4' } : null]}
+                                        onPress={() => setFlag12(!flag12)} />
                                 </View>
                             </View>
 
@@ -140,13 +146,13 @@ export default FilterModal = ({ visible, hideModal }) => {
                                 </View>
                             </View>
                             <View style={{ flexDirection: 'row', marginTop: 10, }}>
-                                <FilterRoundbtn style={[styles.roundedBtn, flag1 ? { borderColor: '#03A9F4' } : null,]}
-                                    style1={[styles.btn, flag1 ? { color: '#03A9F4' } : null]}
-                                    onPress={() => setFlag1(!flag1)} name={'Low'} />
-                                <FilterRoundbtn style={[styles.roundedBtn, flag2 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]} onPress={() => setFlag2(!flag2)}
-                                    style1={[styles.btn, flag2 ? { color: '#03A9F4' } : null]} name={'Medium'} />
-                                <FilterRoundbtn style={[styles.roundedBtn, flag2 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]} onPress={() => setFlag2(!flag2)}
-                                    style1={[styles.btn, flag2 ? { color: '#03A9F4' } : null]} name={'High'} />
+                                <FilterRoundbtn style={[styles.roundedBtn, flag13 ? { borderColor: '#03A9F4' } : null,]}
+                                    style1={[styles.btn, flag13 ? { color: '#03A9F4' } : null]}
+                                    onPress={() => setFlag13(!flag13)} name={'Low'} />
+                                <FilterRoundbtn style={[styles.roundedBtn, flag14 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]} onPress={() => setFlag14(!flag14)}
+                                    style1={[styles.btn, flag14 ? { color: '#03A9F4' } : null]} name={'Medium'} />
+                                <FilterRoundbtn style={[styles.roundedBtn, flag15 ? { borderColor: '#03A9F4' } : null, { marginLeft: 10 }]} onPress={() => setFlag15(!flag15)}
+                                    style1={[styles.btn, flag15 ? { color: '#03A9F4' } : null]} name={'High'} />
 
                             </View>
 
