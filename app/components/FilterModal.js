@@ -1,5 +1,5 @@
 import { setStatusBarHidden, setStatusBarTranslucent } from 'expo-status-bar';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import { Divider, Modal, Portal } from 'react-native-paper';
 import { AntDesign } from '@expo/vector-icons'
 import { useState } from 'react';
@@ -18,12 +18,15 @@ export default FilterModal = ({ visible, hideModal }) => {
     let [flag9, setFlag9] = useState(false)
 
     return (
-
+        
         <Portal>
-            <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle} style={{ height: '62%' }} >
+            
+            <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle} style={{ }} >
+            <ScrollView>
                 <View style={{
                     flex: 1,
                     backgroundColor: 'white',
+                    
                 }}>
                     <View style={{ marginTop: 20, flexDirection: 'row', marginLeft: '42%' }}>
                         <Text style={{
@@ -35,7 +38,7 @@ export default FilterModal = ({ visible, hideModal }) => {
                     </View>
 
                     <View style={styles.mainContainer}>
-                        <View style={{ marginTop: 28, flexDirection: 'row' }}>
+                        <View style={{ marginTop: 8, flexDirection: 'row' }}>
                             <Text style={{
                                 fontSize: 14,
                                 color: '#616161',
@@ -43,7 +46,7 @@ export default FilterModal = ({ visible, hideModal }) => {
                             }}>SORT BY</Text>
                             <AntDesign name='filter' size={18} color={'#03A9F4'} style={{ marginLeft: '2%' }} />
                         </View>
-                        <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-between' }}>
+                        <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-between',flexWrap:'wrap' }}>
                             <FilterRoundbtn style={[styles.roundedBtn, flag1 ? { borderColor: '#03A9F4' } : null]}
                                 style1={[styles.btn, flag1 ? { color: '#03A9F4' } : null]}
                                 onPress={() => setFlag1(!flag1)} name={'Project Name'} />
@@ -118,19 +121,21 @@ export default FilterModal = ({ visible, hideModal }) => {
                         </View>
                     </View>
                 </View>
+                </ScrollView>
             </Modal>
         </Portal>
+        
     )
 }
 
 let styles = StyleSheet.create({
     container: {
         marginTop: 200,
-        height: 200
+        
     },
     roundedBtn: {
         height: 36,
-        paddingLeft: 15,
+        paddingLeft:15 ,
         paddingRight: 15,
         borderWidth: 2,
         borderRadius: 30,
@@ -144,6 +149,7 @@ let styles = StyleSheet.create({
 
 
     }, mainContainer: {
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        marginVertical:20
     }
 })

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import Textinputoutlined from '../components/Textinputoutlined'
 
 import Textdropdown from '../components/Textdropdown';
@@ -9,29 +9,31 @@ import Attachments from '../components/Attachments';
 export default EditBugsDetail = () => {
     let da = ['open', 'close']
     return (
-        <View style={styles.container}>
-            <View style={styles.inputbtn}>
-                <Textinputoutlined label={'Issue'} />
+        <ScrollView>
+            <View style={styles.container}>
+                <View style={styles.inputbtn}>
+                    <Textinputoutlined label={'Issue'} />
+                </View>
+                <View style={styles.inputbtn}>
+                    <Textinputoutlined label={'Description'} />
+                </View>
+                <Textdropdown label={'Status'} da={da} />
+                <Divider style={{ borderWidth: 0.2, marginBottom: 21 }} />
+                <Textdropdown label={'Created By'} da={da} />
+                <Textdropdown label={'Assigned To'} da={da} />
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <Textdropdown label={'Type'} da={da} style={{ width: '50%', }} />
+                    <Textdropdown label={'Device'} da={da} style={{ width: '40%' }} />
+                </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <Textdropdown label={'Type'} da={da} style={{ width: 150, }} />
+                    <Textdropdown label={'Device'} da={da} style={{ width: 150 }} />
+                </View>
+                <Divider />
+                <Text>Comments</Text>
+                <Attachments />
             </View>
-            <View style={styles.inputbtn}>
-                <Textinputoutlined label={'Description'} />
-            </View>
-            <Textdropdown label={'Status'} da={da} />
-            <Divider style={{ borderWidth: 0.2, marginBottom: 21 }} />
-            <Textdropdown label={'Created By'} da={da} />
-            <Textdropdown label={'Assigned To'} da={da} />
-            <View style={{flexDirection:'row',justifyContent:'space-between' }}>
-                <Textdropdown label={'Type'} da={da} style={{width:150,}} />
-                <Textdropdown label={'Device'} da={da} style={{width:150}} />
-            </View>
-            <View style={{flexDirection:'row',justifyContent:'space-between' }}>
-                <Textdropdown label={'Type'} da={da} style={{width:150,}} />
-                <Textdropdown label={'Device'} da={da} style={{width:150}} />
-            </View>
-            <Divider/>
-            <Text>Comments</Text>
-            <Attachments/>
-        </View>
+        </ScrollView>
     )
 }
 

@@ -58,9 +58,9 @@ export default Overview = () => {
                 </View>
                 <View style={{ borderWidth: 0.5, borderColor: 'black', marginTop: 21, marginBottom: 20 }}></View>
                 <Text>TEST CYCLE </Text>
-                <View style={{ flexDirection: 'row' }}>
+                <View style={{ flexDirection: 'row',justifyContent:'space-between' }}>
                     <Text>TCY001</Text>
-                    <View style={{ marginLeft: '40%', flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'row' }}>
                         <View style={[styles.btn, { backgroundColor: '#FF5722' }]} />
 
 

@@ -12,7 +12,7 @@ export default LogIn = (props) => {
                 <Image source={require('../images/Logo.png')}
                     style={{ width: 180, height: 68,marginTop:25 }} />
                 <View style={{
-                    marginTop:'54%',
+                    marginTop:'64%',
                     alignItems: 'center'
                 }}>
                     <Image source={require('../images/QA-Logo.png')}
@@ -24,7 +24,7 @@ export default LogIn = (props) => {
                         backgroundColor: '#03A9F4',
                         width: 268,
                         height: 40,
-                        marginTop: '15%',
+                        marginTop: '25%',
                         borderRadius: 3,
 
 

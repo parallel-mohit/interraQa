@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, ScrollView } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ViewTestCycleDetails from './ViewTestCycleDetails'
 import TestCaseId from './TestCaseId'
@@ -15,86 +15,89 @@ export default TestCycle = (props) => {
     }
     return (
         <>
-        <View style={styles.container}>
-            <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
-                <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity >
-                        <Image source={require('../images/Filter.png')}
-                            style={{
-                                width: 22,
-                                height: 22,
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <TouchableOpacity >
+                                <Image source={require('../images/Filter.png')}
+                                    style={{
+                                        width: 22,
+                                        height: 22,
 
-                            }} />
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Text style={styles.filterTxt}>Filter</Text>
-                    </TouchableOpacity>
-                </View>
-                <FlatList
-                    data={users}
-                    renderItem={({ item }) =>
-                        <View>
-                            <TouchableOpacity style={styles.list} onPress={() => handleTestCycleList(item)}>
-                                <View style={{
-                                    flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 12
-                                }}>
-                                    <Text style={{ color: '#616161', fontSize: 12 }}>ID</Text>
-                                    <Text style={{ color: '#616161', fontSize: 12 }}>STATUS</Text>
-                                </View>
-                                <View style={{
-                                    flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 12
-                                }}>
-                                    <Text style={{ color: '#212121', fontSize: 16 }}>{item.id}</Text>
-                                    {item.Status === 'completed' ?
-                                        <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
-
-                                            <Text style={{ color: 'white', fontSize: 12 }}>{item.Status}</Text>
-                                        </View>
-                                        : <View style={[styles.btn, { backgroundColor: '#FFC107' }]} >
-                                            <Text style={{ color: '#212121', fontSize: 12 }}>{item.Status}</Text>
-                                        </View>
-                                    }
-                                </View>
-                                {
-
-                                    (isStatus === item.Status) ? <View>
-                                        <View style={{
-                                            flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 11
-                                        }}>
-                                            <Text style={{ color: '#616161', fontSize: 12 }}>TOTAL EXECUTED</Text>
-                                            <Text style={{ color: '#616161', fontSize: 12 }}>RESULT</Text>
-                                        </View>
-                                        <View>
-                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
-                                                <View style={{ flexDirection: 'row' }}>
-                                                    <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
-                                                        <Text style={{ fontSize: 11, color: '#FFFFFF' }}>{`Pass ${item.totalExecuted.pass}`}</Text>
-                                                    </View>
-
-
-                                                    <View style={[styles.btn, { backgroundColor: '#FF5722' }]} >
-                                                        <Text style={{ fontSize: 11, color: '#FFFFFF' }}>{`Fail ${item.totalExecuted.fail}`}</Text>
-                                                    </View>
-
-                                                </View>
-                                                <View style={{ marginRight: 10 }}>
-                                                    <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
-                                                        <Text style={{ fontSize: 11, color: '#FFFFFF' }}>Fail</Text>
-                                                    </View>
-                                                </View>
-
-                                            </View>
-                                        </View>
-                                    </View> : null
-
-                                }
+                                    }} />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Text style={styles.filterTxt}>Filter</Text>
                             </TouchableOpacity>
                         </View>
-                    } />
-            </View>
-            
-        </View>
-        <RoundIconbtn name={'plus'} color={'#FFFFFF'} size={16} style={styles.addbtn} />
+                        <FlatList
+                        scrollEnabled={false}
+                            data={users}
+                            renderItem={({ item }) =>
+                                <View>
+                                    <TouchableOpacity style={styles.list} onPress={() => handleTestCycleList(item)}>
+                                        <View style={{
+                                            flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 12
+                                        }}>
+                                            <Text style={{ color: '#616161', fontSize: 12 }}>ID</Text>
+                                            <Text style={{ color: '#616161', fontSize: 12 }}>STATUS</Text>
+                                        </View>
+                                        <View style={{
+                                            flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 12
+                                        }}>
+                                            <Text style={{ color: '#212121', fontSize: 16 }}>{item.id}</Text>
+                                            {item.Status === 'completed' ?
+                                                <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
+
+                                                    <Text style={{ color: 'white', fontSize: 12 }}>{item.Status}</Text>
+                                                </View>
+                                                : <View style={[styles.btn, { backgroundColor: '#FFC107' }]} >
+                                                    <Text style={{ color: '#212121', fontSize: 12 }}>{item.Status}</Text>
+                                                </View>
+                                            }
+                                        </View>
+                                        {
+
+                                            (isStatus === item.Status) ? <View>
+                                                <View style={{
+                                                    flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 11
+                                                }}>
+                                                    <Text style={{ color: '#616161', fontSize: 12 }}>TOTAL EXECUTED</Text>
+                                                    <Text style={{ color: '#616161', fontSize: 12 }}>RESULT</Text>
+                                                </View>
+                                                <View>
+                                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
+                                                        <View style={{ flexDirection: 'row' }}>
+                                                            <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
+                                                                <Text style={{ fontSize: 11, color: '#FFFFFF' }}>{`Pass ${item.totalExecuted.pass}`}</Text>
+                                                            </View>
+
+
+                                                            <View style={[styles.btn, { backgroundColor: '#FF5722' }]} >
+                                                                <Text style={{ fontSize: 11, color: '#FFFFFF' }}>{`Fail ${item.totalExecuted.fail}`}</Text>
+                                                            </View>
+
+                                                        </View>
+                                                        <View style={{ marginRight: 10 }}>
+                                                            <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
+                                                                <Text style={{ fontSize: 11, color: '#FFFFFF' }}>Fail</Text>
+                                                            </View>
+                                                        </View>
+
+                                                    </View>
+                                                </View>
+                                            </View> : null
+
+                                        }
+                                    </TouchableOpacity>
+                                </View>
+                            } />
+                    </View>
+
+                </View>
+            </ScrollView>
+            <RoundIconbtn name={'plus'} color={'#FFFFFF'} size={16} style={styles.addbtn} />
         </>
     )
 }
@@ -103,7 +106,7 @@ let Stack = createNativeStackNavigator();
 // export default TestCycle = () => {
 //     return (
 //         <Stack.Navigator screenOptions={{}}>
-           
+
 //         </Stack.Navigator>
 //     )
 // }
