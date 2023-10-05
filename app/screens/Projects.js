@@ -10,40 +10,47 @@ export default Projects = (props) => {
     let handleProjectlst = () => {
         props.navigation.navigate('ProjectContainer')
     }
-  
+
     return (
         <>
             <ScrollView >
                 <View style={styles.container}>
 
-                    <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
-                        
+                    <View style={{ paddingHorizontal: 10}}>
+
                         <Filter />
                         <FlatList data={users}
                             scrollEnabled={false}
                             renderItem={({ item }) => <TouchableOpacity style={styles.list} onPress={() => handleProjectlst()}>
-                                <View style={{ marginHorizontal: 10, paddingVertical: 20 }}>
+                                <View style={{ marginHorizontal: 10 }}>
                                     <Text style={{
                                         fontSize: 16,
+                                        color: '#212121'
                                     }}>PROJECT NAME</Text>
                                 </View>
                                 <View style={{
-                                    flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10
+                                    flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 10
                                 }}>
-                                    <Text>CLIENT</Text>
-                                    <Text>CURRENT RELEASE</Text>
+                                    <Text style={{
+                                        fontSize: 12,
+                                        color: '#616161'
+                                    }}>CLIENT</Text>
+                                    <Text style={{
+                                        fontSize: 12,
+                                        color: '#616161'
+                                    }}>CURRENT RELEASE</Text>
                                 </View>
                                 <View style={{
                                     flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 5
                                 }}>
-                                    <Text style={{ color: '#212121' }}>Client Name</Text>
-                                    <Text style={{ color: '#212121' }}>2</Text>
+                                    <Text style={{ color: '#212121', fontSize: 14 }}>Client Name</Text>
+                                    <Text style={{ color: '#212121', fontSize: 14 }}>2</Text>
                                 </View>
                                 <View style={{
                                     flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 12
                                 }}>
-                                    <Text style={{ color: '#212121', fontSize: 12 }}>START DATE</Text>
-                                    <Text style={{ color: '#212121', fontSize: 12 }}>END DATE</Text>
+                                    <Text style={{ color: '#616161', fontSize: 12 }}>START DATE</Text>
+                                    <Text style={{ color: '#616161', fontSize: 12 }}>END DATE</Text>
                                 </View>
                                 <View style={{
                                     flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 5
@@ -87,13 +94,14 @@ let styles = StyleSheet.create({
     },
     list: {
         width: '100%',
-        height: 166,
+      
         backgroundColor: 'white',
-        marginTop: 10,
+        
         marginBottom: 10,
         borderWidth: 1,
         borderRadius: 5,
-        borderColor: '#E0E0E0'
+        borderColor: '#E0E0E0',
+        paddingVertical:20,
     },
     addbtn: {
         position: 'absolute',

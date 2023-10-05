@@ -17,13 +17,12 @@ export default Filter = ({ data }) => {
     }
     return (
         <View style={styles.container}>
-            <View style={{ flexDirection: 'row' }}>
+            <View style={{ flexDirection: 'row' ,marginVertical:20}}>
                 <TouchableOpacity onPress={onPress}>
                     <Image source={require('../images/Filter.png')}
                         style={{
                             width: 22,
                             height: 22,
-
                         }} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={onPress}>

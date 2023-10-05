@@ -7,7 +7,12 @@ import TestCycle from './TestCycle';
 let Tab = createMaterialTopTabNavigator();
 export default ProjectContainer  = () => {
 return (
-    <Tab.Navigator screenOptions={{}}>
+    <Tab.Navigator screenOptions={{
+        tabBarActiveTintColor:'#03A9F4',
+        tabBarInactiveTintColor:'black',
+        tabBarIndicatorStyle:{backgroundColor:'#03A9F4'},
+        tabBarStyle:{backgroundColor:'#FAFAFA'}
+        }}>
             <Tab.Screen name='Overview' component={Overview}/>
             <Tab.Screen name='TestCycle' component={TestCycle}/>
             <Tab.Screen name='Bugs' component={Bug}/>

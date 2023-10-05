@@ -1,11 +1,21 @@
-import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TextInput, ScrollView, TouchableOpacity } from 'react-native'
 
 import Attachments from '../components/Attachments';
 import Textinputoutlined from '../components/Textinputoutlined';
+import { useState } from 'react';
+import { ToggleButton } from 'react-native-paper';
+
 
 
 export default TestCaseId = () => {
-  
+    let [pass, setPass] = useState(true)
+    let [fail, setFail] = useState(true)
+    let handleFailBtn = () => {
+        setPass(!pass)
+    }
+    let handlePassBtn = () => {
+        setFail(!fail)
+    }
 
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -35,10 +45,10 @@ export default TestCaseId = () => {
                         <Text style={{ color: '#FFFFFF', fontSize: 12 }}>UI</Text>
                     </View>
                     <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
-                        <Text style={{ color: '#ffffff', fontSize: 12 }}>POSITIVE</Text>
+                        <Text style={{ color: '#ffffff', fontSize: 12 }}>Positive</Text>
                     </View>
                 </View>
-                <View style={{ borderWidth: 0.4, borderColor: '#BDBDBD', marginBottom: 20 }}></View>
+                <View style={{ borderWidth: 1, borderColor: '#BDBDBD', marginBottom: 20 }}></View>
 
                 <Text style={{ fontSize: 12, color: "#616161" }}>PRE CONDITION</Text>
                 <Text style={{ fontSize: 14, color: '#212121', marginTop: 5 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
@@ -52,21 +62,32 @@ export default TestCaseId = () => {
                 <Text style={{ color: '#616161', fontSize: 12 }}>RESULTS</Text>
                 <View style={{
                     flexDirection: 'row', marginTop: 10
-                }}>
-                    <View style={[styles.btn, { backgroundColor: '#4CAF50', height: 40, width: 80, borderRadius: 5 }]} >
-                        <Text style={{ color: 'white', fontSize: 12 }}>PASS</Text>
-                    </View>
-                    <View style={[styles.btn, { backgroundColor: '#FF5722', height: 40, width: 80, marginLeft: 20, borderRadius: 5 }]} >
-                        <Text style={{ color: 'white', fontSize: 12 }}>FAIL</Text>
-                    </View>
+                }}>{
+                        pass ? <TouchableOpacity onPress={handlePassBtn}
+                            style={[styles.btn, {
+                                backgroundColor: '#4CAF50', height: 40, width: 80, borderRadius: 5,
+                            }]} >
+                            <Text style={{ color: 'white', fontSize: 12 }}>PASS</Text>
+                        </TouchableOpacity> : null
+                    }
+                    {
+                        fail ? <TouchableOpacity onPress={handleFailBtn}
+                            style={[styles.btn, {
+                                backgroundColor: '#FF5722', height: 40, width: 80, marginLeft: 20, borderRadius: 5,
+                            }]} >
+                            <Text style={{ color: 'white', fontSize: 12 }}>FAIL</Text>
+                        </TouchableOpacity> : null
+                    }
+                    
                 </View>
-                <Text style={{ fontSize: 12, color: "#616161", marginTop: 10,marginBottom:20 }}>ACTUAL RESULT</Text>
+                <Text style={{ fontSize: 12, color: "#616161", marginTop: 10, marginBottom: 20, }}>ACTUAL RESULT</Text>
                 <Textinputoutlined label={"ACTUAL RESULT"} />
                 {/* <TextInput style={styles.input} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo
                     d tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
                     elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</TextInput>
-                 */} 
-               <Attachments/>
+                 */}
+                <Attachments />
+                <View style={{ borderWidth: 1, borderColor: '#BDBDBD', marginBottom: 20, marginTop: 20 }}></View>
             </View>
         </ScrollView>
     )

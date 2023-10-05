@@ -26,7 +26,7 @@ export default Attachments = () => {
 
     return (
         <ScrollView style={styles.container}>
-            <View style={{ borderWidth: 0.4, borderColor: '#BDBDBD', marginBottom: 20, marginTop: 20 }}></View>
+            <View style={{ borderWidth: 1, borderColor: '#BDBDBD', marginBottom: 20, marginTop: 20 }}></View>
             <Text style={{ fontSize: 14, color: '#616161', fontWeight: '600' }}>ATTACHMENTS</Text>
             <TouchableOpacity onPress={handleImagePicker}>
                 <View style={{

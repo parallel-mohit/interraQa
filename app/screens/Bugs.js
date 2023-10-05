@@ -2,10 +2,15 @@ import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, FlatList }
 import Filter from '../components/Filter'
 import { AntDesign } from '@expo/vector-icons'
 import RoundIconBtn from '../components/RoundIconBtn'
+import { useState } from 'react'
 
 
 export default Bugs = (props) => {
     let users = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]
+    let [name,setName]=useState()
+    let handlePlus = () => {
+        
+    }
     let handleNavigatoion = () => {
         props.navigation.navigate('View Bug Details')
     }
@@ -14,7 +19,7 @@ export default Bugs = (props) => {
             <ScrollView >
                 <View style={styles.container}>
 
-                    <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
+                    <View style={{ paddingHorizontal: 10 }}>
                         <Filter data={1} />
 
                         <View style={{
@@ -27,11 +32,11 @@ export default Bugs = (props) => {
                             borderRadius: 5,
                             flexDirection: 'row',
                             justifyContent: 'space-between',
-                            alignItems: 'center', marginTop: 10
+                            alignItems: 'center'
                         }}>
                             <Text style={{ fontSize: 16 }}>PROJECT NAME</Text>
 
-                            <AntDesign name={'plus'}
+                            <AntDesign name={name}
                                 color={'#03A9F4'}
                                 style={{
                                     height: 24,
@@ -43,13 +48,12 @@ export default Bugs = (props) => {
                                     marginRight: 10
 
                                 }}
-                                size={15} />
-
+                                size={15} onPress={handlePlus} />
                         </View>
 
 
                         <View style={styles.lstContainer}>
-                            <View style={{ paddingVertical: 20 }}>
+                            <View style={{ paddingTop:20 }}>
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                     <Text style={{
                                         fontSize: 16,
@@ -65,7 +69,6 @@ export default Bugs = (props) => {
                                             padding: 4,
                                             borderRadius: 20,
                                             marginRight: 10
-
                                         }}
                                         size={15} />
                                 </View>
@@ -82,7 +85,8 @@ export default Bugs = (props) => {
                                                     <View style={{ flexDirection: 'row' }}>
 
                                                         <Text style={{
-                                                            marginRight: 25, color: '#616161',
+                                                            marginRight: 25,
+                                                            color: '#616161',
                                                             fontSize: 12
                                                         }}>DAYS OLD</Text>
 
@@ -101,11 +105,11 @@ export default Bugs = (props) => {
                                                         fontSize: 16, color: '#212121'
                                                     }}>34522</Text>
                                                     <View style={{ flexDirection: 'row' }}>
-                                                        <View style={[styles.btn, { backgroundColor: '#FFC107', width: 42 }]} >
-                                                            <Text>05</Text>
+                                                        <View style={[styles.btn, { backgroundColor: '#FFC107', width: 42, height: 23, marginRight: 10 }]} >
+                                                            <Text style={{ fontSize: 11, color: '#616161' }}>05</Text>
                                                         </View>
-                                                        <View style={[styles.btn, { backgroundColor: '#FF5722', width: 58 }]} >
-                                                            <Text>05</Text>
+                                                        <View style={[styles.btn, { backgroundColor: '#2196F3', width: 58 }]} >
+                                                            <Text style={{ fontSize: 11, color: '#FFFFFF' }}>05</Text>
                                                         </View>
                                                     </View>
 
@@ -113,10 +117,10 @@ export default Bugs = (props) => {
                                                 </View>
 
                                                 <Text style={{
-                                                    fontSize: 12, color: '#616161'
+                                                    fontSize: 12, color: '#616161', marginTop: 10
                                                 }}>Issue</Text>
                                                 <Text style={{
-                                                    color: '#616161',
+                                                    color: '#212121',
                                                     fontSize: 14, marginTop: 5
                                                 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
 
@@ -136,12 +140,12 @@ export default Bugs = (props) => {
                                                     flexDirection: 'row', justifyContent: 'space-between', marginTop: 5
                                                 }}>
                                                     <Text style={{
-                                                        color: '#616161',
+                                                        color: '#212121',
                                                         fontSize: 14,
-                                                        fontWeight: '800'
+                                                        // fontWeight: '600'
                                                     }}>Employee Name</Text>
                                                     <View style={[styles.btn, { backgroundColor: '#FFC107', height: 23 }]} >
-                                                        <Text>MEDIUM</Text>
+                                                        <Text style={{ fontSize: 11, color: '#616161' }}>MEDIUM</Text>
                                                     </View>
                                                 </View>
 
@@ -176,8 +180,8 @@ let styles = StyleSheet.create({
         marginHorizontal: 10
     },
     lstContainer: {
-
-        marginTop: 20,
+        marginTop: 10,
+        marginBottom:20,
         borderRadius: 5,
         backgroundColor: 'white',
         borderWidth: 1,
@@ -186,7 +190,7 @@ let styles = StyleSheet.create({
 
     list: {
         width: '100%',
-
+        paddingBottom: 20,
         backgroundColor: 'white',
         borderBottomWidth: 1,
 
@@ -200,7 +204,7 @@ let styles = StyleSheet.create({
         borderRadius: 30,
         marginLeft: 7,
         justifyContent: 'center',
-        alignItems: 'center', marginBottom: 20
+        alignItems: 'center'
     }, btnTxt: {
         fontSize: 11,
         color: '#FFFFFF'

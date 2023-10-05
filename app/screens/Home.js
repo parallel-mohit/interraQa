@@ -3,45 +3,49 @@ import RoundIconBtn from '../components/RoundIconBtn'
 
 export default Home = (props) => {
     let users = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]
-    let handleSeeAll = () => {
+    let hanldeProjects = () => {
         props.navigation.navigate('Projects')
     }
+   
     return (
         <>
             <ScrollView style={styles.container}>
 
                 <View style={styles.mainContainer}>
                     <View style={styles.lstContainer}>
-                        <View style={{ paddingVertical: 20 }}>
+                        <View style={{ paddingTop: 20 }}>
                             <Text style={{
-                                fontSize: 16,
+                                fontSize: 14,
+                                
+                                fontFamily:'OpenSans-Regular',
                                 marginLeft: 10
-                            }}>My Projects</Text>
+                            }}>MY PROJECTS</Text>
                             <FlatList data={users}
                                 scrollEnabled={false}
                                 renderItem={({ item }) => <View style={styles.list}>
                                     <View>
-                                        <View style={{ marginHorizontal: 10, marginVertical: 20 }}>
+                                        <View style={{ marginHorizontal: 10, marginTop:20 }}>
                                             <Text style={{
                                                 fontSize: 16,
+                                                fontWeight:'bold',
                                             }}>PROJECT NAME</Text>
                                         </View>
                                         <View style={{
-                                            flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 12
+                                            flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10,marginTop:10
                                         }}>
-                                            <Text style={{ color: '#212121', fontSize: 12 }}>CLIENT</Text>
-                                            <Text style={{ color: '#212121', fontSize: 12 }}>END DATE</Text>
+                                            <Text style={{ color: '#616161', fontSize: 12 }}>CLIENT</Text>
+                                            <Text style={{ color: '#616161', fontSize: 12 }}>END DATE</Text>
                                         </View>
                                         <View style={{
                                             flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 5
                                         }}>
-                                            <Text style={{ color: '#212121', fontSize: 14 }}>CLIENT NAME</Text>
-                                            <Text style={{ color: '#212121', fontSize: 14 }}>Thu, 4 Aug 2022</Text>
+                                            <Text style={{ color: '#212121', fontSize: 14 }}>Client Name</Text>
+                                            <Text style={{ color: '#FF5722', fontSize: 14 }}>Thu, 4 Aug 2022</Text>
                                         </View>
                                         <View style={{
-                                            flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 5
+                                            flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginRight: 10, marginTop: 10
                                         }}>
-                                            <Text style={{ color: '#212121', fontSize: 14 }}>Bugs</Text>
+                                            <Text style={{ color: '#616161', fontSize: 12 }}>BUGS</Text>
 
                                         </View>
                                         <View style={{
@@ -53,13 +57,13 @@ export default Home = (props) => {
 
                                         }}>
                                             <View style={[styles.btn, { backgroundColor: '#FF5722' }]}>
-                                                <Text>11 High</Text>
+                                                <Text style={{color:'white',fontSize:11}}>11 High</Text>
                                             </View>
                                             <View style={[styles.btn, { backgroundColor: '#FF5722' }]}>
-                                                <Text>16 Critical</Text>
+                                                <Text style={{color:'white',fontSize:11}}>16 Critical</Text>
                                             </View>
                                             <View style={[styles.btn, { backgroundColor: '#FFC107' }]}>
-                                                <Text>4 Major</Text>
+                                                <Text style={{color:'#616161',fontSize:11}}>4 Major</Text>
                                             </View>
                                         </View>
                                     </View>
@@ -69,29 +73,55 @@ export default Home = (props) => {
 
                     </View>
                     <View style={styles.diagramView}>
-                        <View style={{ marginHorizontal: 10, marginVertical: 20 }}>
-                            <Text style={{
-                                color: '#616161', fontSize: 14
-                            }}>BUG STATUS</Text>
-                        </View>
+                        <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
+                            <Text style={{ color: '#616161', fontSize: 14, marginBottom: 20 }}>BUG STATUS</Text>
+                            <View style={{ alignItems: 'center' }}>
+                                <View style={[styles.circle, { justifyContent: 'center', alignItems: 'center' }]}>
+                                    <Text style={{ fontSize: 12, marginBottom: 3, opacity: 0.5 }}>Total BUGS</Text>
+                                    <Text>372</Text>
+                                </View>
+                            </View>
 
-                    </View>
-                    <View style={styles.diagramView}>
-                        <View style={{ marginHorizontal: 10, marginVertical: 20 }}>
-                            <Text style={{
-                                color: '#616161', fontSize: 14
-                            }}>PROJECT STATUS</Text>
-                            <TouchableOpacity style={{ alignItems: 'center' }} onPress={() => handleSeeAll()}>
-                                <Text>SEE ALL</Text>
+                            <Status backgroundColor={'#2196F3'} status={'Open'} />
+                            <Status backgroundColor={'#FFC107'} status={'In-Progess'} />
+                            <Status backgroundColor={'#4CAF50'} status={'Fixed'} />
+                            <Status backgroundColor={'#1B5E20'} status={'Close'} />
+                            <Status backgroundColor={'#E64A19'} status={'Rejected'} />
+                            <Status backgroundColor={'#673AB7'} status={'Differed'} />
+                        </View>
+                        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 15, marginBottom: 20 }}>
+                            <TouchableOpacity>
+                                <Text style={{ color: '#03A9F4', fontWeight: '600' }}>
+                                    SEE ALL
+                                </Text>
                             </TouchableOpacity>
                         </View>
-
                     </View>
-
+                    <View style={styles.diagramView}>
+                        <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
+                            <Text style={{ color: '#616161', fontSize: 14, marginBottom: 20 }}>PROJECT STATUS</Text>
+                            <View style={{ alignItems: 'center' }}>
+                                <View style={[styles.circle, { justifyContent: 'center', alignItems: 'center' }]}>
+                                    <Text style={{ fontSize: 12, marginBottom: 3, opacity: 0.5 }}>Total Projects</Text>
+                                    <Text>10</Text>
+                                </View>
+                            </View>
+                            <Status backgroundColor={'#2196F3'} status={'Completed Projects'} />
+                            <Status backgroundColor={'#4CAF50'} status={'Active Projects'} />
+                            <Status backgroundColor={'#E64A19'} status={'Inactive Projects'} />
+                        </View>
+                        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 20, marginBottom: 20 }}>
+                            <TouchableOpacity onPress={hanldeProjects}>
+                                <Text style={{ color: '#03A9F4', fontWeight: '600' }}>
+                                    SEE ALL
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
                 </View>
 
             </ScrollView>
-           
+
         </>
     )
 }
@@ -143,13 +173,23 @@ let styles = StyleSheet.create({
         color: '#FFFFFF'
     }, diagramView: {
         width: '100%',
-        height: 568,
+
         marginVertical: 10,
         borderRadius: 5,
         backgroundColor: 'white',
         borderWidth: 1,
         borderColor: '#E0E0E0',
 
-    },
-   
+    }, circle: {
+        height: 200,
+        width: 200,
+        borderWidth: 5,
+        borderRadius: 100,
+        borderColor: '#EEEEEE',
+        borderTopColor: '#03A9F4',
+
+
+
+    }
+
 })

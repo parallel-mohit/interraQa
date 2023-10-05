@@ -19,6 +19,7 @@ export default Main = () => {
 return (
     <NavigationContainer>
         <Stack.Navigator screenOptions={{
+            headerStyle:{backgroundColor:'#FAFAFA'},
             headerTitle: '', headerLeft: () => (
                 <Image source={require('../images/QA-Logo.png')} style={{
                     width: 52.73,
@@ -54,7 +55,7 @@ return (
                 headerShadowVisible: false,
                 headerBackImageSource:Icon,
                 headerTintColor:'#03A9F4',
-                headerStyle: {},
+               
                 headerLeft: () => (
                     <Text style={{ color: '#03A9F4', fontSize: 18, }}>Project Title</Text>
                 ),
@@ -63,13 +64,12 @@ return (
             {/* <Stack.Screen name='TestCycle' component={TestCycle} /> */}
             <Stack.Screen name='View Test Cycles Details' component={ViewTestCycleDetails} options={{
 
-                headerShadowVisible: false,
+                // headerShadowVisible: false,
                 headerBackImageSource:Icon,
                 headerTintColor:'#03A9F4',
-
-                headerStyle: {},
+               
                 headerLeft: () => (
-                    <Text style={{ color: '#03A9F4', fontSize: 18, }}>Project Title</Text>
+                    <Text style={{ color: '#03A9F4', fontSize: 18}}>View Test Cycles Details</Text>
                 ),
                 headerRight: () => <View></View>
 
@@ -77,12 +77,12 @@ return (
 
             <Stack.Screen name='Test Case Id' component={TestCaseId} options={{
 
-                headerShadowVisible: false,
+                // headerShadowVisible: false,
                 headerBackImageSource:Icon,
                 headerTintColor:'#03A9F4',
-                headerStyle: {},
+                
                 headerLeft: () => (
-                    <Text style={{ color: '#03A9F4', fontSize: 18, }}>Project Title</Text>
+                    <Text style={{ color: '#03A9F4', fontSize: 18, }}>Test Case Id</Text>
                 ),
                 headerRight: () => <View></View>
 
@@ -90,13 +90,12 @@ return (
 
             <Stack.Screen name='View Bug Details' component={ViewBugDetail} options={{
 
-                headerShadowVisible: false,
+                // headerShadowVisible: false,
                 headerBackImageSource:Icon,
                 headerTintColor: '#03A9F4',
 
                 headerBackVisible: true,
 
-                headerStyle: {},
                 headerLeft: () => (
                     <View style={{ flexDirection: 'row' }}>
                         {/* <TouchableOpacity onPress={BackHandler}> */}
@@ -114,10 +113,10 @@ return (
 
             <Stack.Screen name='Edit Bugs Details' component={EditBugsDetail} options={{
 
-                headerShadowVisible: false,
+                // headerShadowVisible: false,
                 headerBackImageSource: Icon ,
                 headerTintColor:'#03A9F4',
-                headerStyle: {},
+             
                 headerLeft: () => (
                     <Text style={{ color: '#03A9F4', fontSize: 18, }}>Edit Bugs Details</Text>
                 ),
