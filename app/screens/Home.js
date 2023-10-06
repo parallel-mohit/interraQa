@@ -17,7 +17,7 @@ export default Home = (props) => {
                             <Text style={{
                                 fontSize: 14,
                                 
-                                fontFamily:'OpenSans-Regular',
+                                // fontFamily:'OpenSans-Regular',
                                 marginLeft: 10
                             }}>MY PROJECTS</Text>
                             <FlatList data={users}

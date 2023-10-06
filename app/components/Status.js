@@ -10,7 +10,8 @@ export default Status = ({backgroundColor,status}) => {
                     <Text style={{ color: '#212121', marginBottom: 5 }}>{status}</Text>
                 </View>
             </View>
-           <Divider style={{marginTop:10}}/>
+            <Divider style={{marginTop:10,borderWidth:1,borderColor:'#BDBDBD'}}/>
+
            {/* <View style={{ borderWidth: 0.5, borderColor: 'black', marginTop: 10 }} /> */}
         </View>
     )

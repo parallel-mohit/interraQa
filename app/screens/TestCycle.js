@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, ScrollView } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ViewTestCycleDetails from './ViewTestCycleDetails'
 import TestCaseId from './TestCaseId'
@@ -16,10 +16,12 @@ export default TestCycle = (props) => {
     }
     return (
         <>
+        <ScrollView>
         <View style={styles.container}>
             <View style={{ paddingHorizontal: 10 }}>
                 <Filter />
                 <FlatList
+                    scrollEnabled={false}
                     data={users}
                     renderItem={({ item }) =>
                         <View>
@@ -77,25 +79,22 @@ export default TestCycle = (props) => {
                                     </View> : null
 
                                 }
-                            </TouchableOpacity>
-                        </View>
-                    } />
-            </View>
+
             
-        </View>
-        <RoundIconbtn name={'plus'} color={'#FFFFFF'} size={16} style={styles.addbtn} />
+                
+                                    </TouchableOpacity>
+                                </View>
+                            } />
+                    </View>
+
+                </View>
+            </ScrollView>
+            <RoundIconbtn name={'plus'} color={'#FFFFFF'} size={16} style={styles.addbtn} />
         </>
     )
 }
-let Stack = createNativeStackNavigator();
 
-// export default TestCycle = () => {
-//     return (
-//         <Stack.Navigator screenOptions={{}}>
-           
-//         </Stack.Navigator>
-//     )
-// }
+
 
 let styles = StyleSheet.create({
     container: {},

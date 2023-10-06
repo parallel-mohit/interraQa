@@ -7,9 +7,9 @@ import { useState } from 'react'
 
 export default Bugs = (props) => {
     let users = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]
-    let [name,setName]=useState()
-    let handlePlus = () => {
-        
+    let [name, setName] = useState()
+    let handlePlus = ({ name }) => {
+        // setName('plus')
     }
     let handleNavigatoion = () => {
         props.navigation.navigate('View Bug Details')
@@ -36,7 +36,7 @@ export default Bugs = (props) => {
                         }}>
                             <Text style={{ fontSize: 16 }}>PROJECT NAME</Text>
 
-                            <AntDesign name={name}
+                            <AntDesign name={'plus'}
                                 color={'#03A9F4'}
                                 style={{
                                     height: 24,
@@ -53,7 +53,7 @@ export default Bugs = (props) => {
 
 
                         <View style={styles.lstContainer}>
-                            <View style={{ paddingTop:20 }}>
+                            <View style={{ paddingTop: 20 }}>
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                     <Text style={{
                                         fontSize: 16,
@@ -181,7 +181,7 @@ let styles = StyleSheet.create({
     },
     lstContainer: {
         marginTop: 10,
-        marginBottom:20,
+        marginBottom: 20,
         borderRadius: 5,
         backgroundColor: 'white',
         borderWidth: 1,

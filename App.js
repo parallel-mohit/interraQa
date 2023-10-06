@@ -7,7 +7,7 @@ import { PaperProvider } from 'react-native-paper';
 
 export default App  = () => {
   let [spalshLoaded,setSplashLoaded] = useState(false)
-  setTimeout(()=>setSplashLoaded(true),3000)
+  setTimeout(()=>setSplashLoaded(true),1000)
 return (
     <PaperProvider style={styles.container}>
       {

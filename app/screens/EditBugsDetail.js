@@ -1,15 +1,16 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import Textinputoutlined from '../components/Textinputoutlined'
-
 import Textdropdown from '../components/Textdropdown';
 import { Divider } from 'react-native-paper';
 import Attachments from '../components/Attachments';
+import Comments from '../components/Comments';
 
 
 export default EditBugsDetail = () => {
     let da = ['open', 'close']
     return (
-        <View style={styles.container}>
+        <ScrollView >
+            <View style={styles.container}>
             <View style={styles.inputbtn}>
                 <Textinputoutlined label={'Issue'} />
             </View>
@@ -17,7 +18,7 @@ export default EditBugsDetail = () => {
                 <Textinputoutlined label={'Description'} />
             </View>
             <Textdropdown label={'Status'} da={da} />
-            <Divider style={{ borderWidth: 0.2, marginBottom: 21 }} />
+            <Divider style={{  borderWidth: 1, borderColor: '#BDBDBD', marginBottom: 20 }} />
             <Textdropdown label={'Created By'} da={da} />
             <Textdropdown label={'Assigned To'} da={da} />
             <View style={{flexDirection:'row',justifyContent:'space-between' }}>
@@ -28,10 +29,11 @@ export default EditBugsDetail = () => {
                 <Textdropdown label={'Type'} da={da} style={{width:150,}} />
                 <Textdropdown label={'Device'} da={da} style={{width:150}} />
             </View>
-            <Divider/>
-            <Text>Comments</Text>
+            <Divider style={{ marginTop: 20, borderWidth: 1, borderColor: '#BDBDBD', marginBottom: 20 }} />
+            <Comments data={1}/>
             <Attachments/>
-        </View>
+            </View>
+        </ScrollView>
     )
 }
 

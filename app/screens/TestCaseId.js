@@ -87,6 +87,7 @@ export default TestCaseId = () => {
                     elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</TextInput>
                  */}
                 <Attachments />
+                
                 <View style={{ borderWidth: 1, borderColor: '#BDBDBD', marginBottom: 20, marginTop: 20 }}></View>
             </View>
         </ScrollView>
