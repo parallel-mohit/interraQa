@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+
 import Textinputoutlined from '../components/Textinputoutlined'
 import Textdropdown from '../components/Textdropdown';
 import { Divider } from 'react-native-paper';

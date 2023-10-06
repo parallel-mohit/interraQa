@@ -111,7 +111,7 @@ export default Overview = () => {
                 <Status backgroundColor={'#673AB7'} status={'Differed'} />
 
             </View>
-
+            </View>
         </ScrollView >
     )
 }

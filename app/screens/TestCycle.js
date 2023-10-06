@@ -1,9 +1,5 @@
 import { useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, ScrollView } from 'react-native'
-import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, ScrollView } from 'react-native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import ViewTestCycleDetails from './ViewTestCycleDetails'
-import TestCaseId from './TestCaseId'
 import Filter from '../components/Filter'
 
 export default TestCycle = (props) => {
