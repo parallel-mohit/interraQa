@@ -62,6 +62,9 @@ export default Overview = () => {
                         <Text>37(12%)</Text>
                     </View>
                 </View>
+                <View style={{ borderWidth: 0.5, borderColor: 'black', marginTop: 21, marginBottom: 20 }}></View>
+                <Text>TEST CYCLE </Text>
+                <View style={{ flexDirection: 'row',justifyContent:'space-between' }}>
                 {/* <View style={{ borderWidth: 0.5, borderColor: 'black', marginTop: 20, marginBottom: 20 }}></View> */}
                 <Divider style={{marginTop: 20, borderWidth:1,borderColor:'#BDBDBD'}}/>
                 <Text style={{ fontSize: 14, color: '#616161' ,marginTop:20}}>TEST CYCLE </Text>

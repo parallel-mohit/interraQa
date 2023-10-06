@@ -25,9 +25,11 @@ export default FilterModal = ({ visible, hideModal }) => {
     let [flag15, setFlag15] = useState(false)
 
     return (
-        <ScrollView>
-            <Portal>
-                <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}  >
+
+        <Portal>
+
+            <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}  >
+                <ScrollView>
                     <View style={{
                         flex: 1,
                         backgroundColor: 'white',
@@ -167,8 +169,9 @@ export default FilterModal = ({ visible, hideModal }) => {
                                 </View>
                             </View>
                             <Textdropdown label={'ASsigned To'} value={''} />
-                            <View style={{ alignItems: 'center', }}>
-                                <View style={{
+                            <View style={{ alignItems: 'center', marginBottom:20}}>
+                                
+                                    <TouchableOpacity style={{
                                     height: 40,
                                     width: 240,
                                     backgroundColor: '#03A9F4',
@@ -177,16 +180,19 @@ export default FilterModal = ({ visible, hideModal }) => {
                                     alignItems: 'center',
 
                                 }}>
-                                    <Text style={{ color: 'white' }}>
-                                        show  results
-                                    </Text>
-                                </View>
+                                        <Text style={{ color: 'white' }}>
+                                            show  results
+                                        </Text>
+                                    </TouchableOpacity>
+                               
                             </View>
                         </View>
                     </View>
-                </Modal>
-            </Portal>
-        </ScrollView>
+                </ScrollView>
+            </Modal>
+
+        </Portal >
+
     )
 }
 
@@ -211,6 +217,7 @@ let styles = StyleSheet.create({
 
 
     }, mainContainer: {
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+
     }
 })

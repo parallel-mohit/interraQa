@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, ScrollView } from 'react-native'
 
 export default ViewTestCycleDetails = (props) => {
     let users = props.route.params
+    let handleTestCycleList = (item) => {
+        props.navigation.navigate('Test Case Id', item.id)
     let handleTestCycleList = (item) => {
         props.navigation.navigate('Test Case Id', item.id)
     }
@@ -47,13 +49,13 @@ export default ViewTestCycleDetails = (props) => {
                                     {isResult === item.result ?
                                         <View style={[styles.btn, { backgroundColor: '#FF5722' }]} >
 
-                                            <Text style={{ color: 'white', fontSize: 12 }}>{item.result}</Text>
-                                        </View>
-                                        : item.result !== '' ? <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
-                                            <Text style={{ color: 'white', fontSize: 12 }}>{item.result}</Text>
-                                        </View> : null
-                                    }
-                                </View>
+                                                <Text style={{ color: 'white', fontSize: 12 }}>{item.result}</Text>
+                                            </View>
+                                            : item.result !== '' ? <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
+                                                <Text style={{ color: 'white', fontSize: 12 }}>{item.result}</Text>
+                                            </View> : null
+                                        }
+                                    </View>
 
                             </TouchableOpacity>
                         </View>} />

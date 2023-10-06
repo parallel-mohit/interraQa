@@ -17,13 +17,18 @@ export default FilterModal = ({ visible, hideModal }) => {
 
     return (
         
+        
         <Portal>
+            
+            <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle} style={{ }} >
+            <ScrollView>
             
             <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle} style={{ }} >
             <ScrollView>
                 <View style={{
                     flex: 1,
                     backgroundColor: 'white',
+                    
                     
                 }}>
                     <View style={{ marginTop: 20, flexDirection: 'row', marginLeft: '42%' }}>
@@ -37,6 +42,7 @@ export default FilterModal = ({ visible, hideModal }) => {
 
                     <View style={styles.mainContainer}>
                         <View style={{ marginTop: 8, flexDirection: 'row' }}>
+                        <View style={{ marginTop: 8, flexDirection: 'row' }}>
                             <Text style={{
                                 fontSize: 14,
                                 color: '#616161',
@@ -44,6 +50,7 @@ export default FilterModal = ({ visible, hideModal }) => {
                             }}>SORT BY</Text>
                             <AntDesign name='filter' size={18} color={'#03A9F4'} style={{ marginLeft: '2%' }} />
                         </View>
+                        <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-between',flexWrap:'wrap' }}>
                         <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-between',flexWrap:'wrap' }}>
                             <FilterRoundbtn style={[styles.roundedBtn, flag1 ? { borderColor: '#03A9F4' } : null]}
                                 style1={[styles.btn, flag1 ? { color: '#03A9F4' } : null]}
@@ -120,8 +127,10 @@ export default FilterModal = ({ visible, hideModal }) => {
                     </View>
                 </View>
                 </ScrollView>
+                </ScrollView>
             </Modal>
         </Portal>
+        
         
     )
 }
@@ -130,9 +139,11 @@ let styles = StyleSheet.create({
     container: {
         marginTop: 200,
         
+        
     },
     roundedBtn: {
         height: 36,
+        paddingLeft:15 ,
         paddingLeft:15 ,
         paddingRight: 15,
         borderWidth: 2,
@@ -147,6 +158,8 @@ let styles = StyleSheet.create({
 
 
     }, mainContainer: {
+        paddingHorizontal: 20,
+        marginVertical:20
         paddingHorizontal: 20,
         marginVertical:20
     }

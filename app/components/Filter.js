@@ -16,6 +16,7 @@ export default Filter = ({ data }) => {
         }
     }
     return (
+        
         <View style={styles.container}>
             <View style={{ flexDirection: 'row' ,marginVertical:20}}>
                 <TouchableOpacity onPress={onPress}>
@@ -36,11 +37,12 @@ export default Filter = ({ data }) => {
                 bug?<BugFilter visible={bug} hideModal={hideModal1}/>:null
             }
         </View>
+       
     )
 }
 
 let styles = StyleSheet.create({
-    container: {},
+    container: {flex:1,},
     filterTxt: {
         fontSize: 16,
         color: '#03A9F4',
