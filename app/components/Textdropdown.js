@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import { TextInput } from 'react-native-paper';
 import SelectDropdown from 'react-native-select-dropdown'
 import { AntDesign } from '@expo/vector-icons'
-export default Textdropdown = ({label,da,style,value}) => {
+export default Textdropdown = ({label,da,style,value1}) => {
     // console.log()
     return (
         <View style={styles.container}>
@@ -20,7 +20,7 @@ export default Textdropdown = ({label,da,style,value}) => {
                 render={props =>
 
                     <SelectDropdown
-
+                        defaultButtonText={value1}
                         dropdownIconPosition={'right'}
                         // defaultButtonText='open'
                         renderDropdownIcon={isOpened => {

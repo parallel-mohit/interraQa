@@ -40,7 +40,7 @@ export default Overview = () => {
                     <Text style={{ fontSize: 12, color: '#616161', marginBottom: 5 }}>DESCRIPTION</Text>
                     <Text style={{ color: '#212121', fontSize: 14 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu scelerisque felis imperdiet proin fermentum leo vel. Bibendum neque egestas congue quisque egestas diam in.</Text>
                 </View>
-                <Divider  style={{marginTop: 21, marginBottom: 20,borderWidth:1,borderColor:'#BDBDBD'}}/>
+                <Divider style={{ marginTop: 21, marginBottom: 20, borderWidth: 1, borderColor: '#BDBDBD' }} />
                 <View>
                     <Text style={{ color: '#616161', fontSize: 14, marginBottom: 20 }}>REALEASE STATUS</Text>
                     <View style={{ alignItems: 'center' }}>
@@ -62,39 +62,36 @@ export default Overview = () => {
                         <Text>37(12%)</Text>
                     </View>
                 </View>
-                <View style={{ borderWidth: 0.5, borderColor: 'black', marginTop: 21, marginBottom: 20 }}></View>
-                <Text>TEST CYCLE </Text>
-                <View style={{ flexDirection: 'row',justifyContent:'space-between' }}>
-                {/* <View style={{ borderWidth: 0.5, borderColor: 'black', marginTop: 20, marginBottom: 20 }}></View> */}
-                <Divider style={{marginTop: 20, borderWidth:1,borderColor:'#BDBDBD'}}/>
-                <Text style={{ fontSize: 14, color: '#616161' ,marginTop:20}}>TEST CYCLE </Text>
-                <View style={{ flexDirection: 'row', marginTop: 23 ,justifyContent:'space-between'}}>
+              
+                {/* <Text>TEST CYCLE </Text> */}
+                {/* <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}> */}
+                <Divider style={{ marginTop: 20, borderWidth: 1, borderColor: '#BDBDBD' }} />
+                <Text style={{ fontSize: 14, color: '#616161', marginTop: 20 }}>TEST CYCLE </Text>
+                <View style={{ flexDirection: 'row', marginTop: 23, justifyContent: 'space-between' }}>
                     <Text>TCY001</Text>
-                    <View style={{  flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'row' }}>
                         <View style={[styles.btn, { backgroundColor: '#FF5722' }]} >
-                            <Text style={{color:'white',fontSize:12}}>Fail</Text>
+                            <Text style={{ color: 'white', fontSize: 12 }}>Fail</Text>
                         </View>
                         <View style={[styles.btn, { backgroundColor: '#4CAF50' }]} >
-                            <Text style={{color:'white',fontSize:12}}>Completed</Text>
+                            <Text style={{ color: 'white', fontSize: 12 }}>Completed</Text>
                         </View>
                     </View>
                 </View>
-                <Divider style={{marginTop:20,borderWidth:1,borderColor:'#BDBDBD'}}/>
-                {/* <View style={{ borderWidth: 0.5, borderColor: 'black', marginTop: 21, marginBottom: 20 }} />
-                 */}
-                 
-                 <View style={{ flexDirection: 'row',justifyContent:'space-between',marginTop:20}}>
+                <Divider style={{ marginTop: 20, borderWidth: 1, borderColor: '#BDBDBD' }} />
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
                     <Text>TCY002</Text>
-                    <View style={{ }}>
+                    <View style={{
+                    }}>
                         <View style={[styles.btn, { backgroundColor: '#FFC107' }]} >
-                            <Text style={{color:'white',fontSize:12}}>In-Progress</Text>
+                            <Text style={{ color: 'white', fontSize: 12 }}>In-Progress</Text>
                         </View>
-                        
+
                     </View>
                 </View>
-                <Divider style={{marginTop:20,borderWidth:1,borderColor:'#BDBDBD'}}/>
+                <Divider style={{ marginTop: 20, borderWidth: 1, borderColor: '#BDBDBD' }} />
                 <View>
-                    <Text style={{ color: '#616161', fontSize: 14, marginBottom: 20 ,marginTop:20}}>BUGS</Text>
+                    <Text style={{ color: '#616161', fontSize: 14, marginBottom: 20, marginTop: 20 }}>BUGS</Text>
                     <View style={{ alignItems: 'center' }}>
                         <View style={[styles.circle, { justifyContent: 'center', alignItems: 'center' }]}>
                             <Text style={{ fontSize: 12, marginBottom: 3, opacity: 0.5 }}>Total BUGS</Text>
@@ -111,7 +108,7 @@ export default Overview = () => {
                 <Status backgroundColor={'#673AB7'} status={'Differed'} />
 
             </View>
-            </View>
+            {/* </View> */}
         </ScrollView >
     )
 }
@@ -133,9 +130,9 @@ let styles = StyleSheet.create({
 
 
     }, btn: {
-       paddingVertical:4,
-       
-        paddingHorizontal:15,
+        paddingVertical: 4,
+
+        paddingHorizontal: 15,
         borderRadius: 30,
         marginLeft: 10,
 

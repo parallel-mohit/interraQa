@@ -33,6 +33,7 @@ export default ViewTestCycleDetails = (props) => {
                     </View>
                     <FlatList
                         data={usersCaseId}
+                        scrollEnabled={false}
                         renderItem={({ item }) =>
                             <View>
                                 <TouchableOpacity style={styles.list} onPress={() => handleTestCycleList(item)}>

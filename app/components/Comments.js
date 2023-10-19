@@ -1,9 +1,4 @@
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
-
-import { AntDesign } from '@expo/vector-icons'
-
-// import { TextInput } from 'react-native-paper'
-
 export default Comments = ({ data }) => {
     return (
         <View style={styles.container}>

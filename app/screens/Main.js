@@ -7,9 +7,10 @@ import ProjectContainer from './ProjectContainer';
 import Projects from './Projects';
 import TestCycle from './TestCycle';
 import ViewBugDetail from './ViewBugDetail';
+import ViewTestCycleDetails from './ViewTestCycleDetails'
 import EditBugsDetail from './EditBugsDetail';
-import { BackHandler } from 'react-native';
-import { ScreenStackHeaderBackButtonImage } from 'react-native-screens';
+import TestCaseId from './TestCaseId';
+
 
 let Stack = createNativeStackNavigator();
 export default Main = () => {
